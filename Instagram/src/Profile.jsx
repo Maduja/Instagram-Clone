@@ -6,9 +6,17 @@ function Profile() {
 
 const[profile,setProfile] = useState(null)
 
+const[followers,setFollowers] = useState([])
+
 useEffect(()=>{
     axios.get('http://localhost:3000/profile')
     .then(data=>setProfile(data.data))
+    .catch(err=>console.log(err))
+
+    axios.get('http://localhost:3000/followers')
+    .then(data=>setFollowers(data.data))
+    .catch(err=>console.log(err))
+
 },[])
 
     function HandleOnChange(e){
@@ -16,6 +24,12 @@ useEffect(()=>{
             ...prev,
             [e.target.name]:e.target.value
         }))
+    }
+
+    const handledUpdate = async()=>{
+        axios.put('http://localhost:3000/profile',profile)
+        .then(console.log('updated'))
+        .catch(err=>console.log(err))
     }
 
 
@@ -39,14 +53,36 @@ useEffect(()=>{
                         onChange={HandleOnChange}
                 />
 
-                <button className='btn btn-primary my-4'>
+                <button className='btn btn-primary my-4' onClick={handledUpdate}>
                     Update
                 </button>
 
             </div>
     ):(
         <div>Loading</div>
-    )}</div>
+    )}
+    <div className='my-2 fs-4 text'>Followers</div>
+    {followers.length>0 ? (
+        
+            followers.map(follower=>(
+                <div key={follower.id} className='d-flex my-2'>
+                    
+                    <img src={follower.image} alt="image" className='followr-dp rounded-circle my-1'/>
+                    {follower.username}
+                    <button className='btn btn-secondary ms-auto'>unFollow</button>
+                </div>
+            ))
+        
+    ):(
+        <div>
+            Loading Followers
+        </div>
+    )}
+    
+    
+    
+    
+    </div>
   )
 }
 
