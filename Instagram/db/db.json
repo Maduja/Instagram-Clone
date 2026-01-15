@@ -145,6 +145,11 @@
       "id": "5",
       "username": "debugdiary",
       "image": "src/assets/user5.jpg"
+    },
+    {
+      "id": "105",
+      "username": "travel_diaries",
+      "image": "src/assets/travel.jpg"
     }
   ]
 }

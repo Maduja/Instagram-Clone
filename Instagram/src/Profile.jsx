@@ -31,6 +31,7 @@ useEffect(()=>{
     const handledUpdate = async()=>{
         axios.put('http://localhost:3000/profile',profile)
         .then(console.log('updated'))
+        .then(alert('updated'))
         .catch(err=>console.log(err))
     }
 
