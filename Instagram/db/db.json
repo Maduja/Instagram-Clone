@@ -145,16 +145,6 @@
       "id": "5",
       "username": "debugdiary",
       "image": "src/assets/user5.jpg"
-    },
-    {
-      "id": "101",
-      "username": "anne-saf",
-      "image": "src/assets/soft-girl.jpg"
-    },
-    {
-      "id": "103",
-      "username": "brow-jeff",
-      "image": "src/assets/boy.jpeg"
     }
   ]
 }
