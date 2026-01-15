@@ -53,7 +53,7 @@ function Suggestions() {
                         <div className='d-flex'>
                             <img className="dp rounded-circle" src={suggestion.profilePic} alt="profile pic" />
                             <h5>{suggestion.username}</h5>
-                            <a className="text-primary ms-auto" onClick={()=>{handleFollow(suggestion.id,suggestion.username,suggestion.profilePic)}}>Follow</a>
+                            <a className="follow text-primary ms-auto" onClick={()=>{handleFollow(suggestion.id,suggestion.username,suggestion.profilePic)}}>Follow</a>
                         </div>
                         
                     </div>
