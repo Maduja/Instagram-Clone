@@ -50,7 +50,12 @@
     "image": "src/assets/coffee.jpg",
     "caption": "Coffee first ☕ then everything else",
     "likes": 98,
-    "comments": [],
+    "comments": [
+        {
+            "user": "Vikki",
+            "comment" : "Wowwww"
+        }
+    ],
     "createdAt": "2026-01-08T07:45:00Z"
   }
 ]
