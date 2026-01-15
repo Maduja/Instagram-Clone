@@ -29,9 +29,35 @@ function Suggestions() {
             <h5>{profile.username}</h5>
             <small className="ms-auto text-primary">Switch</small>
           </div>
-        ) : (
+        ) : 
           <p>Loading</p>
+          }
+          <div className="d-flex">
+            <p>Suggested for you</p>
+            <b className="ms-auto">See All</b>
+          </div>
+
+
+
+          {suggestions.length>0?(
+            <div>
+                {suggestions.map((suggestion)=>(
+                    <div key={suggestion.id}> 
+                        <div className='d-flex'>
+                            <img className="dp rounded-circle" src={suggestion.profilePic} alt="profile pic" />
+                            <h5>{suggestion.username}</h5>
+                            <p className="text-primary ms-auto">Follow</p>
+                        </div>
+                        
+                    </div>
+                ))}
+            </div>
+        ):(
+            <div>
+                Loading
+            </div>
         )}
+
       </div>
     </div>
   );
